@@ -1,5 +1,4 @@
-# using Pkg; Pkg.add("SCIP")
-using ArgParse, JuMP, CPLEX, Distributions, LinearAlgebra
+using ArgParse, JuMP, CPLEX, LinearAlgebra
 
 include("./get_data.jl") ## include function which reads in data file to matrices
 
