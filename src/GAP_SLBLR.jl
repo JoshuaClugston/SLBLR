@@ -51,7 +51,7 @@ s0     = args["step_init"]
 time_limit = args["time_limit"]
 max_iter = args["max_iter"]
 qmax = -1e9
-num_subproblems = 20 ## number of subproblems to consider for heuristics -- 6 works, but maybe too long to solve feasibility mip in e 20 case (larger number seems to work fast). 5 good for d case
+num_subproblems = 20 ## number of subproblems to consider for heuristics
 
 ###############################################################################################################################################################
 
@@ -96,7 +96,7 @@ q0, λ0 = get_q0(A,b,c, s0)
 ######
 
 ### main algorithm 
-function SLBLR(λ0, s0, γ, ν, ζ, q0, ϵ_gap, ϵ, max_iter, time_limit, qmax, A, b, c, num_subproblems, args) # might need to change -- ζ = 1/1.5, ν = 2, s0 = 0.02, γ = 1/m
+function SLBLR(λ0, s0, γ, ν, ζ, q0, ϵ_gap, ϵ, max_iter, time_limit, qmax, A, b, c, num_subproblems, args) # ζ = 1/1.5, ν = 2, s0 = 0.02, γ = 1/m
     m,n = size(A)
     ck = Dict() ## for first iteration 
     value = true
@@ -240,12 +240,12 @@ function constraint_satisfiability_problem(λk, λk_new, n, k, ck, ν, sk, gx̃)
     if termination_status(model) == INFEASIBLE
         return termination_status(model)
     elseif termination_status(model) == OPTIMAL
-        return ck ## also want to return current constraint set to be added on at next iteration... 
+        return ck 
     end
 end 
 
 
-function feasibility_milp(A,b, xk, num_subproblems) ## need to choose the number of subproblems... e.g., 
+function feasibility_milp(A,b, xk, num_subproblems) 
     model = Model(CPLEX.Optimizer)
     set_silent(model)
     m, n = size(A)
