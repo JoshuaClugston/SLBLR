@@ -4,13 +4,13 @@ include("./get_data.jl")
 
 ### define matrices and vectors corresponding to data
 # instance 1
-A_1, c_1, b_1 = get_data("./gap_e/e201600")
+A_1, c_1, b_1 = get_data("./data/gap_e/e201600")
 
 # instance 2
-A_2, c_2, b_2 = get_data("./gap_e/e801600")
+A_2, c_2, b_2 = get_data("../data/gap_e/e801600")
 
 # # instance 3 
-A_3, c_3, b_3 = get_data("./gap_d/d05100")
+A_3, c_3, b_3 = get_data("../data/gap_d/d05100")
 
 
 ### define a function which describes the model, taking as input the data 
