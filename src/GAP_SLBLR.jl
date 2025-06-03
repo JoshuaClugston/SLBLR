@@ -7,7 +7,7 @@ function parse_commandline()
     @add_arg_table s begin 
         "--data_file"
             arg_type = String 
-            default  = "./gap_d/d05100" ## ./gap_e/e201600, ./gap_e/e801600, ./gap_d/d05100
+            default  = "../data/gap_d/d05100" ## ../data/gap_e/e201600, ../data/gap_e/e801600, ../data/gap_d/d05100
         "--max_iter"
             arg_type = Int64
             default  = 1000
