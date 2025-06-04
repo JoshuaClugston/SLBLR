@@ -6,7 +6,7 @@ for each agent i (i=1,...,m):\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cost of allocating job j to agent i (j=1,...,n)\
 for each agent i (i=1,...,m):\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resource consumed in allocating job j to agent i (j=1,...,n)\
-resource capacity of agent i (i=1,...,m)\
+resource capacity of agent i (i=1,...,m)
 
 Particularly, the first line encodes the number of agents ($i$) and jobs ($j$) found in each data file, while the first loop encodes the appropriate cost ($c_{ij}$) for allocating agent $i$ to job $j$, the second loop encodes the amount of time ($a_{ij}$) used by agent $i$ to complete job $j$, and the final line encodes the available time that agent $i$ has to complete job $j$ within each data file. 
 
